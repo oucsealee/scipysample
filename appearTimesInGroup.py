@@ -27,7 +27,7 @@ def get_appear_times_list(data_frame, count_group_items, step):
     col_index = 0
     for index in range(0, count, step):
         data_frame_latest_30 = data_frame[index: (index + count_group_items)]
-        if (index+ count_group_items) >= data_frame.iloc[:, 0].size:
+        if (index + count_group_items) >= data_frame.iloc[:, 0].size:
             break
         data_latest = data_frame.iloc[index + count_group_items]
         list_latest_all = data_latest.tolist()
@@ -46,7 +46,7 @@ def get_appear_frequency_list(data_frame, count_group_items, step):
     list_num_times, list_sel_flags = get_appear_times_list(data_frame, count_group_items, step)
     for x in list_num_times:
         for index, frequency in enumerate(x):
-            fre = frequency/ float(count_group_items)
+            fre = frequency / float(count_group_items)
             x[index] = int(np.around(fre*100))
     return list_num_times
 
