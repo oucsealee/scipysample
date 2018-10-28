@@ -10,7 +10,7 @@ def main():
     min_data_row = appearTimes.get_min_data_row(data_frame)
     print ('MinDataRow=', min_data_row)
 
-    last_data = pandasReader.get_last_data(data_frame)
+    last_data = pandasReader.get_last_red_data(data_frame)
     count = 20
     plat_whole = plt.subplot2grid((1, count+ 1), (0, 0))
     list_ball_all = appearTimes.get_all_ball_times(data_frame)
