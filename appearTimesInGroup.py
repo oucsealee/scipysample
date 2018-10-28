@@ -15,7 +15,7 @@ def get_column_count(count, step):
     col_count = divmod(count, step)
     num_col = col_count[0]
     if col_count[1] > 0:
-        num_col = num_col+ 1
+        num_col += 1
     return num_col
 
 
@@ -42,7 +42,6 @@ def get_appear_times_list(data_frame, count_group_items, step):
 
 
 def get_appear_frequency_list(data_frame, count_group_items, step):
-    count = get_count_groups(data_frame, count_group_items)
     list_num_times, list_sel_flags = get_appear_times_list(data_frame, count_group_items, step)
     for x in list_num_times:
         for index, frequency in enumerate(x):
@@ -56,7 +55,7 @@ def get_appear_times_column_list(data_frame, count_group_items, step):
     list_times_col = [[0] * (count_group_items+1) for i in range(33)]
     for ball_i, x in enumerate(list_times_col):
         for index, frequency in enumerate(list_num_times[ball_i]):
-            x[frequency] = x[frequency]+ 1
+            x[frequency] += 1
     return list_times_col
 
 

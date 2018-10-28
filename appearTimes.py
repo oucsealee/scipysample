@@ -56,9 +56,9 @@ def draw_appear_times(list_balls, plt_region, last_data):
     print ('region(percent_75,)=', max_quar)
     min_quar = [x for x in list_index if list_balls[x - 1] < percent_25]
     print ("region(,percent_25)==", min_quar)
-    max_cen_quar = [x for x in list_index if list_balls[x - 1] <= percent_75 and list_balls[x-1]>= middle_val]
+    max_cen_quar = [x for x in list_index if list_balls[x - 1] <= percent_75 and list_balls[x-1] >= middle_val]
     print ('region(middle_val,percent_75)=', max_cen_quar)
-    min_cen_quar = [x for x in list_index if list_balls[x - 1] >= percent_25 and list_balls[x-1]< middle_val]
+    min_cen_quar = [x for x in list_index if list_balls[x - 1] >= percent_25 and list_balls[x-1] < middle_val]
     print ('region(percent_25,middle_val)=', min_cen_quar)
 
     plt_region.hlines(percent_25, 0, 33, colors='g')
